@@ -5,7 +5,7 @@ import datetime
 import wikipedia 
 import webbrowser
 import os
-import smtplib
+
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -46,13 +46,6 @@ def takeCommand():
         return "None"
     return query
 
-def sendEmail(to, content):
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.ehlo()
-    server.starttls()
-    server.login('youremail@gmail.com', 'your-password')
-    server.sendmail('youremail@gmail.com', to, content)
-    server.close()
 
 if __name__ == "__main__":
     wishMe()
@@ -91,16 +84,7 @@ if __name__ == "__main__":
 
         
 
-        elif 'email to harry' in query:
-            try:
-                speak("What should I say?")
-                content = takeCommand()
-                to = "ananyasrivastava02872@gmail.com"    
-                sendEmail(to, content)
-                speak("Email has been sent!")
-            except Exception as e:
-                print(e)
-                speak("Sorry Ananya. I am not able to send this email")    
+           
 
 
 
