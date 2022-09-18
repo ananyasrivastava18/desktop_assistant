@@ -27,7 +27,6 @@ def wishMe():
         speak("Good Evening Ananya")
     speak("I am you servant Ananya. Please batao mujhe kya krna hai mere hukum")
 def takeCommand():
-    #It takes microphone input from the user and returns string output
 
     r = sr.Recognizer()
     with sr.Microphone() as source:
@@ -50,10 +49,8 @@ def takeCommand():
 if __name__ == "__main__":
     wishMe()
     while True:
-    # if 1:
+    
         query = takeCommand().lower()
-
-        # Logic for executing tasks based on query
         if 'wikipedia' in query:
             speak('Searching Wikipedia...')
             query = query.replace("wikipedia", "")
